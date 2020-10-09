@@ -1,5 +1,6 @@
 package com.codepath.recyclerviewlab.networking
 
+import com.codepath.recyclerviewlab.BuildConfig
 import com.codepath.recyclerviewlab.models.Article
 import com.codepath.recyclerviewlab.models.NYTimesArticlesAPIResponse
 import retrofit2.Call
@@ -30,7 +31,7 @@ class NYTimesApiClient {
      * @param query
      */
     fun getArticlesByQuery(
-        articlesListResponse: CallbackResponse<List<Article?>?>,
+        articlesListResponse: CallbackResponse<List<Article>?>,
         query: String?
     ) {
         getArticlesByQuery(articlesListResponse, query, 0)
@@ -43,7 +44,7 @@ class NYTimesApiClient {
      * @param pageNumber
      */
     fun getArticlesByQuery(
-        articlesListResponse: CallbackResponse<List<Article?>?>,
+        articlesListResponse: CallbackResponse<List<Article>?>,
         query: String?,
         pageNumber: Int
     ) {
@@ -80,7 +81,7 @@ class NYTimesApiClient {
 
     companion object {
         // TODO: Replace the below API key with your own generated key
-        private const val API_KEY = "<YOUR-API-KEY-GOES-HERE>"
+        private const val API_KEY = BuildConfig.API_KEY
 
         // returns the
         private const val API_FILTER =
