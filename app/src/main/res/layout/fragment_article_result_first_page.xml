@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,14 +16,13 @@
 
         <TextView
             android:id="@+id/first_page_header"
-            android:text="@string/first_page"
-            android:padding="8dp"
-            android:textAllCaps="true"
-            android:background="@color/colorPrimary"
-            android:textColor="@android:color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:background="@color/colorPrimary"
+            android:padding="8dp"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            tools:text="@string/first_page" />
 
         <TextView
             android:id="@+id/article_pub_date"
