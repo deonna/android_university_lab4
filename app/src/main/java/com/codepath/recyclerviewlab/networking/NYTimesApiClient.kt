@@ -65,7 +65,7 @@ class NYTimesApiClient {
                 call: Call<NYTimesArticlesAPIResponse>,
                 response: Response<NYTimesArticlesAPIResponse>
             ) {
-                val articles = response.body().response?.docs
+                val articles = response.body()?.response?.docs
                 if (response.isSuccessful && articles != null) {
                     articlesListResponse.onSuccess(articles)
                 } else {
@@ -87,7 +87,7 @@ class NYTimesApiClient {
         private const val API_FILTER =
             "headline, web_url, snippet, pub_date, word_count, print_page, print_section, section_name"
         private const val BEGIN_DATE = "20100101"
-        private const val SORT_BY = "relevance"
+        private const val SORT_BY = "newest"
     }
 
     init {
