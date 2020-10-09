@@ -24,12 +24,21 @@
             android:textColor="@android:color/white"
             tools:text="@string/first_page" />
 
+        <ImageView
+            android:id="@+id/article_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/text_margin"
+            tools:src="@tools:sample/avatars" />
+
         <TextView
             android:id="@+id/article_pub_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
-            android:textAppearance="?attr/textAppearanceBody2" />
+            android:textAppearance="?attr/textAppearanceBody2"
+            tools:text="10/2/2020" />
 
         <TextView
             android:id="@+id/article_headline"
@@ -38,13 +47,15 @@
             android:layout_margin="@dimen/text_margin"
             android:fontFamily="serif"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            tools:text="This is a headline." />
 
         <TextView
             android:id="@+id/article_snippet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
-            android:textAppearance="?attr/textAppearanceBody2" />
+            android:textAppearance="?attr/textAppearanceBody2"
+            tools:text="Some article content." />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
