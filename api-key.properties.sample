@@ -1,2 +1,2 @@
-API_KEY=<insert api key here>
-API_SECRET=<insert secret here>
+API_KEY="<insert api key here>"
+API_SECRET="<insert secret here>"
