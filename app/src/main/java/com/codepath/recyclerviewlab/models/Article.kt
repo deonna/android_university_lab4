@@ -3,6 +3,11 @@ package com.codepath.recyclerviewlab.models
 import com.google.gson.annotations.SerializedName
 
 class Article {
+
+    companion object {
+        const val PUBLISH_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:s+SSSS"
+    }
+
     @SerializedName("id")
     var id: String? = null
 

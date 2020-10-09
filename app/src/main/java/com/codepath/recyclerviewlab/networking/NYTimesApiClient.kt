@@ -31,7 +31,7 @@ class NYTimesApiClient {
      * @param query
      */
     fun getArticlesByQuery(
-        articlesListResponse: CallbackResponse<List<Article>?>,
+        articlesListResponse: CallbackResponse<List<Article>>,
         query: String?
     ) {
         getArticlesByQuery(articlesListResponse, query, 0)
@@ -44,7 +44,7 @@ class NYTimesApiClient {
      * @param pageNumber
      */
     fun getArticlesByQuery(
-        articlesListResponse: CallbackResponse<List<Article>?>,
+        articlesListResponse: CallbackResponse<List<Article>>,
         query: String?,
         pageNumber: Int
     ) {
@@ -65,9 +65,9 @@ class NYTimesApiClient {
                 call: Call<NYTimesArticlesAPIResponse>,
                 response: Response<NYTimesArticlesAPIResponse>
             ) {
-                val articlesResponse = response.body().response
-                if (response.isSuccessful && articlesResponse != null) {
-                    articlesListResponse.onSuccess(articlesResponse.docs)
+                val articles = response.body()?.response?.docs
+                if (response.isSuccessful && articles != null) {
+                    articlesListResponse.onSuccess(articles)
                 } else {
                     articlesListResponse.onFailure(Throwable("error with response code " + response.code() + " " + response.message()))
                 }
